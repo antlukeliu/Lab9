@@ -21,7 +21,7 @@ public class Validator {
 		}
 		return num;
     }
-	public static char checkingForYesOrNo(){
+	public char checkingForYesOrNo(){
 		Scanner sc = new Scanner(System.in);
 		
 		String response = "";
@@ -29,7 +29,10 @@ public class Validator {
 		while(cont){
 			System.out.print("\nContinue to calculate? (y/n): ");
 			response = sc.nextLine();
-			if (response.toLowerCase().charAt(0) != 'y' && response.toLowerCase().charAt(0) != 'n'){
+			if(response.length() != 1){
+				continue;
+			}
+			else if (response.toLowerCase().charAt(0) != 'y' && response.toLowerCase().charAt(0) != 'n'){
 				continue;
 				}
 			else{
@@ -39,7 +42,7 @@ public class Validator {
 		return response.toLowerCase().charAt(0);
 	}
 	//Breaking while loop if false 
-	public static boolean translatingAgain(char response){
+	public boolean loopingAgain(char response){
 		if (response == 'y'){
 			return true;
 		} else{
@@ -48,7 +51,7 @@ public class Validator {
 	}
 	
 	//Closing message
-	public static void exitting(boolean cont){
+	public void exitting(boolean cont){
 		if (cont == false){
 			System.out.println(	"\nGoodbye.");
 		}

@@ -20,7 +20,7 @@ public class CircleApp {
 			
 			count ++;
 			char response = valid.checkingForYesOrNo();
-			cont = valid.translatingAgain(response);
+			cont = valid.loopingAgain(response);
 			exitting(cont, count);
 			
 		}while(cont);
